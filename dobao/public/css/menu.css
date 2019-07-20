@@ -1,0 +1,832 @@
+/* -----------------------------------------------------------------------------
+  SLIDE AND PUSH MENUS COMPONENT
+
+  ----------------------------------------------------------------------------- */
+/**
+ * Menu overview.
+ */
+ @font-face{
+  font-family: SFProDisplay;
+  src: url(../fonts/SF-Pro-Display-Semibold.otf);
+}
+.c-menu {
+ position: fixed;
+ z-index: 200;
+ background-color: #67b5d1;
+ -webkit-transition: -webkit-transform 0.3s;
+ transition: transform 0.3s;
+ font-family: 'Roboto', sans-serif;
+}
+
+.top-area button.top-area-item,.top-area-item {
+ display: inline-block !important;
+ margin: 0 !important;
+ padding: 0;
+ width: 18%;
+ vertical-align: top;
+ text-align: center;
+ height: 21px;
+ color: #efb479!important;
+}
+
+.download-link.top-area-item a {
+  color: #efb479;
+}
+
+.c-menu button#search_submit {
+ height: 21px;
+}
+
+
+.c-menu__items {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ text-align: center;
+ width: 100%;
+ margin: auto;
+ overflow: hidden;
+ height: 410px;
+ min-width: 100vw;
+}
+
+ul.c-menu__items li {
+ width: 89px;
+}
+
+ul.c-menu__items li {
+ display: inline-block !important;
+ margin-left: 0;
+ margin-bottom: 12px;
+ width: 93px;
+}
+
+/**
+* Left and right menus
+*
+* Slide and push menus coming in from the left and right inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
+*/
+/**
+* Common modifiers for left/right menus.
+*/
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right {
+ width: 100%;
+ height: 100%;
+ /* overflow-y: scroll; */
+}
+@media all and (min-width: 320px) {
+ .c-menu--slide-left,
+ .c-menu--slide-right,
+ .c-menu--push-left,
+ .c-menu--push-right {
+   /* width: 300px; */
+ }
+}
+
+.c-menu--slide-left .c-menu__item,
+.c-menu--slide-right .c-menu__item,
+.c-menu--push-left .c-menu__item,
+.c-menu--push-right .c-menu__item {
+ display: block;
+ text-align: center;
+}
+.c-menu--slide-left .c-menu__item:first-child,
+.c-menu--slide-right .c-menu__item:first-child,
+.c-menu--push-left .c-menu__item:first-child,
+.c-menu--push-right .c-menu__item:first-child {
+ border-top: none;
+ border: none;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-home {
+ background: url(../img/menu/home.svg);
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+ height: 400px;
+}
+li.c-menu__item.menu-home:active {
+ background: url(../img/menu/C.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-home.real.c-menu-c_item-active {
+  background: url(../img/menu/C.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-info {
+ background: url(../img/menu/info.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-info:active {
+ background: url(../img/menu/D.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-info.real.c-menu-c_item-active {
+  background: url(../img/menu/D.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-news {
+ background: url(../img/menu/news.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-news:active {
+ background: url(../img/menu/E.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-news.real.c-menu-c_item-active {
+  background: url(../img/menu/E.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-music {
+ background: url(../img/menu/music.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-music:active {
+ background: url(../img/menu/F.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-music.real.c-menu-c_item-active {
+  background: url(../img/menu/F.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-photo {
+ background: url(../img/menu/photo.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-photo:active {
+ background: url(../img/menu/G.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-photo.real.c-menu-c_item-active {
+  background: url(../img/menu/G.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-show {
+ background: url(../img/menu/show.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-show:active {
+ background: url(../img/menu/A.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-show.real.c-menu-c_item-active {
+  background: url(../img/menu/A.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+li.c-menu__item.menu-contact {
+ background: url(../img/menu/contact.svg);
+ height: 400px;
+ background-size: cover;
+ box-sizing: border-box;
+ padding-top: 360px;
+}
+
+li.c-menu__item.menu-contact:active {
+ background: url(../img/menu/B.svg);
+ background-size: cover;
+}
+li.c-menu__item.menu-contact.real.c-menu-c_item-active {
+  background: url(../img/menu/B.svg);
+  background-size: cover;
+}
+/* Mot phim dan */
+
+li.c-menu__item:hover>a {
+ color: #efb479;
+}
+
+li.c-menu__item>a {
+ font-family: SFProDisplay,sans-serif;
+ font-size: 1.1em;
+ font-weight: 400;
+ text-align: center;
+}
+.c-menu--slide-left .c-menu__item:last-child,
+.c-menu--slide-right .c-menu__item:last-child,
+.c-menu--push-left .c-menu__item:last-child,
+.c-menu--push-right .c-menu__item:last-child {
+ border-bottom: none;
+}
+
+.c-menu--slide-left .c-menu__link,
+.c-menu--slide-right .c-menu__link,
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link {
+ display: inline;
+ padding: 8px;
+ color: #1a1b1d;
+ border: none;
+ text-decoration: none;
+}
+
+.c-menu--slide-left .c-menu__close,
+.c-menu--slide-right .c-menu__close,
+.c-menu--push-left .c-menu__close,
+.c-menu--push-right .c-menu__close {
+ display: block;
+ padding: 12px 40px;
+}
+
+/**
+* Slide/Push Menu Left.
+*/
+.c-menu--slide-left,
+.c-menu--push-left {
+ top: 0;
+ left: 0;
+ -webkit-transform: translateY(-100%);
+ -ms-transform: translateY(-100%);
+ transform: translateY(-100%);
+}
+@media all and (min-width: 320px) {
+ .c-menu--slide-left,
+ .c-menu--push-left {
+   /* -webkit-transform: translateX(-300px); */
+   -ms-transform: translateX(-300px);
+ }
+}
+
+.c-menu--slide-left.is-active,
+.c-menu--push-left.is-active {
+ -webkit-transform: translateY(0);
+ -ms-transform: translateY(0);
+ transform: translateY(0);
+ width: 100%;
+ min-height: 100vh;
+ background: url(../img/BG-menu.png) no-repeat;
+ background-size: cover;
+}
+
+/**
+* Slide/Push Menu Right.
+*/
+.c-menu--slide-right,
+.c-menu--push-right {
+ top: 0;
+ right: 0;
+ -webkit-transform: translateX(100%);
+ -ms-transform: translateX(100%);
+ transform: translateX(100%);
+}
+@media all and (min-width: 320px) {
+ .c-menu--slide-right,
+ .c-menu--push-right {
+   -webkit-transform: translateX(-1400px);
+   -ms-transform: translateX(-1400px);
+   transform: translateX(-1400px);
+   display: none;
+ }
+}
+
+.c-menu--slide-right.is-active,
+.c-menu--push-right.is-active {
+ -webkit-transform: translateX(0);
+ -ms-transform: translateX(0);
+ transform: translateX(0);
+ display: block;
+}
+
+/**
+* Top and bottom menus
+*
+* Slide and push menus coming in from the top and bottom inherit a lot of
+* common styles. We'll start each of them off by doing up the common styles
+* for each version, followed by individual styles.
+*
+* The various versions are governed by modifier classes.
+/**
+* Common modifiers for top/bottom menus
+*/
+.c-menu--slide-top,
+.c-menu--slide-bottom,
+.c-menu--push-top,
+.c-menu--push-bottom {
+ vertical-align: middle;
+ width: 100%;
+ height: 60px;
+ text-align: center;
+ overflow-x: scroll;
+}
+
+.c-menu--slide-top .c-menu__items,
+.c-menu--slide-bottom .c-menu__items,
+.c-menu--push-top .c-menu__items,
+.c-menu--push-bottom .c-menu__items {
+ display: inline-block;
+ text-align: center;
+}
+
+.c-menu--slide-top .c-menu__item,
+.c-menu--slide-bottom .c-menu__item,
+.c-menu--push-top .c-menu__item,
+.c-menu--push-bottom .c-menu__item {
+ display: inline-block;
+ line-height: 60px;
+}
+
+.c-menu--slide-top .c-menu__link,
+.c-menu--slide-bottom .c-menu__link,
+.c-menu--push-top .c-menu__link,
+.c-menu--push-bottom .c-menu__link {
+ display: block;
+ padding: 0 4px;
+ color: #fff;
+}
+
+.c-menu--slide-top .c-menu__close,
+.c-menu--slide-bottom .c-menu__close,
+.c-menu--push-top .c-menu__close,
+.c-menu--push-bottom .c-menu__close {
+ display: inline-block;
+ margin-right: 12px;
+ padding: 0 24px;
+ height: 60px;
+ line-height: 60px;
+}
+
+/**
+* Slide/Push Menu Top.
+*/
+.c-menu--slide-top,
+.c-menu--push-top {
+ top: 0;
+ left: 0;
+ -webkit-transform: translateY(-60px);
+ -ms-transform: translateY(-60px);
+ transform: translateY(-60px);
+}
+
+.c-menu--slide-top.is-active,
+.c-menu--push-top.is-active {
+ -webkit-transform: translateY(0);
+ -ms-transform: translateY(0);
+ transform: translateY(0);
+}
+
+/**
+* Slide/Push Menu Bottom.
+*/
+.c-menu--slide-bottom,
+.c-menu--push-bottom {
+ bottom: 0;
+ left: 0;
+ -webkit-transform: translateY(60px);
+ -ms-transform: translateY(60px);
+ transform: translateY(60px);
+}
+
+.c-menu--slide-bottom.is-active,
+.c-menu--push-bottom.is-active {
+ -webkit-transform: translateY(0);
+ -ms-transform: translateY(0);
+ transform: translateY(0);
+}
+
+/**
+* Wrapper states.
+*
+* Various wrapper states occur depending on if a menu is pushing into view, in
+* which case, the wrapper has to be pushed by the respective distance.
+*/
+.o-wrapper.has-push-left {
+ -webkit-transform: translateX(100%);
+ -ms-transform: translateX(100%);
+ transform: translateX(100%);
+}
+@media all and (min-width: 320px) {
+ .o-wrapper.has-push-left {
+   -webkit-transform: translateX(300px);
+   -ms-transform: translateX(300px);
+   transform: translateX(300px);
+ }
+}
+
+.o-wrapper.has-push-right {
+ -webkit-transform: translateX(-100%);
+ -ms-transform: translateX(-100%);
+ transform: translateX(-100%);
+}
+@media all and (min-width: 320px) {
+ .o-wrapper.has-push-right {
+   -webkit-transform: translateX(-300px);
+   -ms-transform: translateX(-300px);
+   transform: translateX(-300px);
+ }
+}
+
+.o-wrapper.has-push-top {
+ -webkit-transform: translateY(60px);
+ -ms-transform: translateY(60px);
+ transform: translateY(60px);
+}
+
+.o-wrapper.has-push-bottom {
+ -webkit-transform: translateY(-60px);
+ -ms-transform: translateY(-60px);
+ transform: translateY(-60px);
+}
+
+/**
+* Body states.
+*
+* When a menu is active, we want to hide the overflows on the body to prevent
+* awkward document scrolling.
+*/
+body.has-active-menu {
+ overflow: hidden;
+}
+
+/**
+* Close button resets.
+*/
+.c-menu__close {
+ color: #fff;
+ background-color: #3184a1;
+ font-size: 14px;
+ border: none;
+ box-shadow: none;
+ border-radius: none;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+ cursor: pointer;
+}
+
+.c-menu__close:focus {
+ outline: none;
+}
+
+/* -----------------------------------------------------------------------------
+MASK COMPONENT
+
+----------------------------------------------------------------------------- */
+.c-mask {
+ position: fixed;
+ z-index: 100;
+ top: 0;
+ left: 0;
+ overflow: hidden;
+ width: 0;
+ height: 0;
+ background-color: #000;
+ opacity: 0;
+ -webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+ transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.c-mask.is-active {
+ width: 100%;
+ background: url(../img/BG-menu.svg);
+ height: 100%;
+ -webkit-transition: opacity 0.3s;
+ transition: opacity 0.3s;
+ opacity: 0.5;
+}
+a.social-item.youtube img {
+ width: 20px;
+ height: 20px;
+}
+.top-area {
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ margin: 35px 0;
+}
+.c-menu button#search_submit {
+ height: 21px !important;
+}
+.social-menu {
+ text-align: center;
+ display: flex;
+ justify-content: space-around;
+ width: 16%;
+ margin: auto;
+ position: absolute;
+ bottom: 6px;
+ left: 42.5%;
+}
+.download-link.top-area-item.bottom,.hr.bottom{
+  display:none!important;
+}
+@media only screen and (max-width:768px){
+  li.c-menu__item {
+    background: none !important;
+    height: 21px !important;
+    padding: 0!important;
+    display: block!important;
+  }
+  .top-area button.top-area-item, .top-area-item{
+    text-align:left;
+  }
+  .top-area button.top-area-item, .top-area-item{
+    width:30%;
+  }
+  ul.c-menu__items li{
+    background: none !important;
+    height: 21px !important;
+    padding: 0!important;
+    display: block!important;
+    text-align: center !important;
+    margin: 0;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  ul.c-menu__items {
+    max-height: 63vh;
+    }.download-link.top-area-item{
+      display: none!important;
+    }
+    .download-link.top-area-item.bottom,.hr.bottom{
+      display:block!important;
+      text-align:center;
+      width:100%;
+      margin: auto!important;
+      margin-bottom: 15px!important;
+    }
+    .c-menu--slide-left .c-menu__link, .c-menu--slide-right .c-menu__link, .c-menu--push-left .c-menu__link, .c-menu--push-right .c-menu__link{
+      padding: 0;
+      color: #efb479;
+    }
+    .c-menu--slide-left.is-active, .c-menu--push-left.is-active {
+
+      overflow: scroll;
+    }
+  }
+  @media (min-width:769px) and (max-width:900px){
+    ul.c-menu__items li{
+      background: none !important;
+      height: 21px !important;
+      padding: 0!important;
+      display: block!important;
+      text-align: center !important;
+      margin: 0;
+      width: 100%;
+      margin-top: 25px;
+    }
+    
+    li.c-menu__item a {
+      color: #efb479 !important;
+    }
+  }
+  @media only screen and (max-width:1024px){
+    li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33,li.c-menu__item._444,li.c-menu__item._32,li.c-menu__item._555,li.c-menu__item._31,li.c-menu__item._6,li.c-menu__item._30,li.c-menu__item._7,li.c-menu__item._29,li.c-menu__item._8,li.c-menu__item._28,li.c-menu__item._9,li.c-menu__item._27,li.c-menu__item._10,li.c-menu__item._26,li.c-menu__item._11,li.c-menu__item._25,li.c-menu__item._12,li.c-menu__item._24,li.c-menu__item._13,li.c-menu__item._22,li.c-menu__item._14{
+      display: none!important;
+    }
+
+.download-link.top-area-item {
+    display: none!important;
+}
+
+.download-link.top-area-item.bottom, .hr.bottom {
+    display: block !important;
+    width: 100%;
+}
+
+.c-menu__items {
+    max-height: 60vh;
+}
+    li.c-menu__item._5555,li.c-menu__item._23{
+      display:none!important;
+    }
+    li.c-menu__item._15,li.c-menu__item._16,li.c-menu__item._17,li.c-menu__item._18,li.c-menu__item._19,li.c-menu__item._20,li.c-menu__item._21{
+      background: none!important;
+      padding:0;
+      display: block!important;
+      max-height: 41px;
+      width: 100%;
+      text-align: center;
+    }
+
+.c-menu--slide-left .c-menu__link, .c-menu--slide-right .c-menu__link, .c-menu--push-left .c-menu__link, .c-menu--push-right .c-menu__link {
+    color: #efb479;
+}
+  }
+  @media only screen and (min-width:1024px) and (max-width:1278px){
+        li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33,li.c-menu__item._444,li.c-menu__item._32,li.c-menu__item._555,li.c-menu__item._31,li.c-menu__item._6,li.c-menu__item._30,li.c-menu__item._7,li.c-menu__item._29,li.c-menu__item._8,li.c-menu__item._28,li.c-menu__item._9,li.c-menu__item._27,li.c-menu__item._10,li.c-menu__item._26,li.c-menu__item._11,li.c-menu__item._25,li.c-menu__item._12,li.c-menu__item._24,li.c-menu__item._13,li.c-menu__item._22,li.c-menu__item._14{
+      display: none!important;
+    }
+
+.download-link.top-area-item {
+    display: none!important;
+}
+
+.download-link.top-area-item.bottom, .hr.bottom {
+    display: block !important;
+    width: 100%;
+}
+
+.c-menu__items {
+    max-height: 60vh;
+}
+    li.c-menu__item._5555,li.c-menu__item._23{
+      display:none!important;
+    }
+    li.c-menu__item._15,li.c-menu__item._16,li.c-menu__item._17,li.c-menu__item._18,li.c-menu__item._19,li.c-menu__item._20,li.c-menu__item._21{
+      background: none!important;
+      padding:0;
+      display: block!important;
+      max-height: 41px;
+      width: 100%;
+      text-align: center;
+    }
+
+.c-menu--slide-left .c-menu__link, .c-menu--slide-right .c-menu__link, .c-menu--push-left .c-menu__link, .c-menu--push-right .c-menu__link {
+    color: #efb479;
+}
+}
+  @media only screen and (min-width:1279px) and (max-width:1919px){
+    li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33,li.c-menu__item._444,li.c-menu__item._32,li.c-menu__item._555,li.c-menu__item._31,li.c-menu__item._6,li.c-menu__item._30,li.c-menu__item._7,li.c-menu__item._29,li.c-menu__item._8,li.c-menu__item._28,li.c-menu__item._9,li.c-menu__item._27,li.c-menu__item._10,li.c-menu__item._26,li.c-menu__item._11,li.c-menu__item._25{
+      display: none!important;
+    }
+  }
+  @media only screen and (min-width:1920px) and (max-width:2549px){
+   li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33,li.c-menu__item._444,li.c-menu__item._32,li.c-menu__item._555,li.c-menu__item._31,li.c-menu__item._6,li.c-menu__item._30,li.c-menu__item._7,li.c-menu__item._29,li.c-menu__item._28{
+     display: none!important;
+   }
+ }
+ @media only screen and (min-width:2550px) and (max-width:2735px){
+   li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33,li.c-menu__item._444,li.c-menu__item._32,li.c-menu__item._32 {
+     display: none!important;
+   }
+ }
+ @media only screen and (min-width:2736px) and (max-width:2879px){
+   li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._33{
+     display: none!important;
+   }
+ }
+ @media only screen and (min-width:2880px) and (max-width:3239px){
+   li.c-menu__item._111,li.c-menu__item._35,li.c-menu__item._222,li.c-menu__item._34,li.c-menu__item._333,li.c-menu__item._35,li.c-menu__item._33{
+     display: none!important;
+   }
+ }
+ @media only screen and (width:1920px){
+   li.c-menu__item._8{
+     display: none!important;
+   }
+ }
+
+
+
+ /*========================search===================*/
+ ul.result {
+  padding-left: 10px;
+    float: right;
+    max-height: 300px;
+    background: #333;
+    overflow: auto;
+    width: 305px;
+    margin-top: 47px;
+    margin-right: -185px;
+  }
+  ul.result2 {
+  padding-left: 10px;
+    float: right;
+    max-height: 300px;
+    background: #333;
+    overflow: auto;
+    width: 305px;
+    margin-top: -30px;
+    margin-right: -2px;
+  }
+#result::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+  background-color: #CCCCCC;
+    color: #F5F5F5;
+}
+
+#result::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+#result::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+#result::-webkit-scrollbar-track-piece{
+    background-color: #CCCCCC;
+}
+#result a{
+  text-decoration: none;
+}
+#result a li{
+    color: #efb479;
+    list-style: none;
+    font-size: 15px;    
+}
+#result a li .span1{
+  font-size: 14px;
+}
+#result a li span{
+    font-size: 11.5px;
+
+  }
+
+img.img-list{
+  padding-top: 10px;
+ /*======================== END search===================*/}
+}
+
+.dropdown-menu{
+  background-color: #1a1b1d47 !important;
+
+}
+.dropdown-menu li a{
+  color: #efb479;
+}
+.modal-header .form-group{
+  text-align: center;
+}
+.modal-header .form-group input{
+  margin:auto;
+  width: 300px; 
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+  box-shadow: 0rem 0.1rem 0rem 0rem rgb(251, 248, 248);
+}
+.modal-header .form-group button{
+  padding: 10px 30px 10px 30px ;
+}
+
+.modal-header form a{
+  text-decoration: none; 
+  color: #181a1b;
+  margin-bottom: 60px;
+}
+.modal-header form a:hover{
+  color: red;
+}
+.modal-header h3{
+  margin-bottom: 50px;
+  color: #504d4d;
+}
+.modal-header ul li{
+  border-bottom: 1px solid #504d4d;
+  list-style: none;
+ margin: 10px 40px 10px 20px;
+}
+.modal-header ul li a{
+  text-decoration: none;
+  color: #504d4d;
+text-align: none;
+line-height: 30px;
+font-size: 16px;
+font-weight: bold;
+
+}
+.modal-header  ul li  a .p:hover{
+  color: red;
+}
+.modal-header  ul li  a .p{
+  color: #30b189;
+  float: right;
+}
+.modal-header .zilacklogo{
+  width: 120px;
+}
+.modal-header .form-group .contactand{
+  margin-bottom: 60px; 
+  margin-top: 30px;
+}
+.modal-header .form-group .contactand a{
+  color: #30b189;
+}

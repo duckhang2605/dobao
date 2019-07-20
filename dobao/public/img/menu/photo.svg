@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="482px" viewBox="0 0 112 482" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>G@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.562384154,28.2515681 L271.347267,28.2515681 C273.556406,28.2515681 275.347267,26.4607071 275.347267,24.2515681 L275.347267,3.63484225e-12 L477.562384,3.63797881e-12 C479.771523,3.60617924e-12 481.562384,1.790861 481.562384,4 L481.562384,108 C481.562384,110.209139 479.771523,112 477.562384,112 L275.347267,112 L275.347267,92.7797932 C275.347267,90.5706542 273.556406,88.7797932 271.347267,88.7797932 L0.562384154,88.7797932 L0.562384154,28.2515681 Z" id="path-1"></path>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu" transform="translate(-1022.000000, -299.000000)">
+            <g id="Group" transform="translate(553.000000, 299.000000)">
+                <g id="G" transform="translate(525.000000, 241.000000) rotate(-270.000000) translate(-525.000000, -241.000000) translate(284.000000, 185.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,2 @@
+<a href="" class="download-store"><img src="{{ asset('img/ios.svg') }}" alt="Download on the app store"></a>
+<a href="" class="download-store"><img src="{{ asset('img/android.svg') }}" alt="Get it on google play"></a>
